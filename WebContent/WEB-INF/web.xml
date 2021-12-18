@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>学生宿舍管理系统</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  
+ <!-- -->
+ 
+  <filter>
+    <description>登录权限过滤拦截器</description>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.ischoolbar.programmer.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/SystemServlet</url-pattern>
+    <url-pattern>/StudentServlet</url-pattern>
+    <url-pattern>/DormitoryManagerServlet</url-pattern>
+    <url-pattern>/BuildingServlet</url-pattern>
+    <url-pattern>/DormitoryServlet</url-pattern>
+    <url-pattern>/LiveServlet</url-pattern>
+  </filter-mapping>
+  
+  
+  <servlet>
+    <description>验证码</description>
+    <servlet-name>CpachaServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.CpachaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CpachaServlet</servlet-name>
+    <url-pattern>/CpachaServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>登录</description>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>系统主页</description>
+    <servlet-name>SystemServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.SystemServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SystemServlet</servlet-name>
+    <url-pattern>/SystemServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>学生管理</description>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/StudentServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>宿管管理</description>
+    <servlet-name>DormitoryManagerServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.DormitoryManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DormitoryManagerServlet</servlet-name>
+    <url-pattern>/DormitoryManagerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>楼宇管理</description>
+    <servlet-name>BuildingServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.BuildingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuildingServlet</servlet-name>
+    <url-pattern>/BuildingServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<description>宿舍管理</description>
+  	<servlet-name>DormitoryServlet</servlet-name>
+  	<servlet-class>com.ischoolbar.programmer.servlet.DormitoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DormitoryServlet</servlet-name>
+  	<url-pattern>/DormitoryServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<description>住宿管理</description>
+  	<servlet-name>LiveServlet</servlet-name>
+  	<servlet-class>com.ischoolbar.programmer.servlet.LiveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LiveServlet</servlet-name>
+  	<url-pattern>/LiveServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<description>管理员管理</description>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<servlet-class>com.ischoolbar.programmer.servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<url-pattern>/AdminServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
